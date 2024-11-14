@@ -1,0 +1,141 @@
+/* General Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fdf3e3; /* Light food-inspired beige background */
+    color: #333;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Main Container Styling */
+.container {
+    max-width: 600px;
+    width: 100%;
+    padding: 30px 40px; /* Adjusted padding for a more balanced look */
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Headings Styling */
+h1, h2 {
+    color: #333;
+    margin: 10px 0;
+    font-weight: 600;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.8em;
+}
+
+/* Input Fields and Select Styling */
+input[type="text"], input[type="number"], textarea, select {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1em;
+    color: #333;
+    box-sizing: border-box;
+    background-color: #fdf5e3; /* Subtle beige for readability */
+}
+
+textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+/* Label Styling */
+label {
+    font-weight: bold;
+    margin-top: 10px;
+    display: block;
+    color: #333;
+}
+
+/* Button Styling */
+button {
+    padding: 12px 24px;
+    border: none;
+    background-color: #5a67d8;
+    color: white;
+    border-radius: 4px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    text-align: center;
+    margin-top: 10px; /* Space between buttons */
+}
+
+/* Search Button Specific Styling */
+button.search-button {
+    margin-bottom: 20px; /* Adds space between the search button and results */
+}
+
+button:hover {
+    background-color: #4c51bf;
+}
+
+/* Go Back Button Styling */
+.go-back {
+    padding: 10px 24px;
+    background-color: #e07a5f; /* Food-inspired color */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    margin-top: 10px; /* Space between buttons */
+}
+
+.go-back:hover {
+    background-color: #d15746;
+}
+
+/* Restaurant Item Styling */
+.restaurant-item {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    text-align: left;
+    background-color: #fff;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.05);
+    margin-top: 20px; /* Ensure space between search button and item cards */
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px 15px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    h2 {
+        font-size: 1.3em;
+    }
+
+    .go-back, button {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZipBites</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>ZipBites</h1>
+        <p class="tagline">Local flavors, personalized for every taste</p>
+
+        <input type="text" id="zipcode" placeholder="Enter pincode (Range: 90001-96162)" />
+        <select id="dietary-filter">
+            <option value="">All Dietary Options</option>
+            <option value="veg">Vegetarian</option>
+            <option value="non-veg">Non-Vegetarian</option>
+            <option value="gluten-free">Gluten-Free</option>
+        </select>
+        <button onclick="fetchRestaurants()">Search</button>
+
+        <div id="restaurant-list"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
