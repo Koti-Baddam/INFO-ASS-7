@@ -1,4 +1,4 @@
-const API_URL = 'https://zipbites.free.beeceptor.com/restaurants';
+const API_URL = 'https://zipbite1.free.beeceptor.com/restaurants';
 
 function fetchRestaurants() {
     const zipcode = document.getElementById('zipcode').value;

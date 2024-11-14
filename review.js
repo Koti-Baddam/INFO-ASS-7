@@ -1,4 +1,4 @@
-const REVIEW_URL = 'https://zipbites.free.beeceptor.com/reviews';
+const REVIEW_URL = 'https://zipbite1.free.beeceptor.com/reviews';
 const urlParams = new URLSearchParams(window.location.search);
 const restaurantId = urlParams.get('id');
 
