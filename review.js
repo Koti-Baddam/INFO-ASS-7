@@ -1,4 +1,4 @@
-const REVIEW_URL = 'https://zipbite1.free.beeceptor.com/reviews';
+const REVIEW_URL = 'https://zipbites1.free.beeceptor.com/reviews';
 const urlParams = new URLSearchParams(window.location.search);
 const restaurantId = urlParams.get('id');
 
@@ -20,16 +20,17 @@ function submitReview(event) {
         body: JSON.stringify(review),
     })
     .then(response => {
-        if (!response.ok) {
+        if (response.ok) {
+            alert('Review submitted successfully!');
+            document.getElementById('review-form').reset();
+        } else {
             throw new Error('Failed to submit review: ' + response.statusText);
         }
-        alert('Review submitted successfully!');
-        document.getElementById('review-form').reset();
     })
     .catch(error => console.error('Error submitting review:', error));
 }
 
-// Go Back function to navigate to the previous page
+// Optional Go Back function if you want a separate button functionality
 function goBack() {
     window.history.back();
 }

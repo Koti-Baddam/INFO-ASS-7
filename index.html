@@ -7,21 +7,43 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
+    <header class="header">
         <h1>ZipBites</h1>
         <p class="tagline">Local flavors, personalized for every taste</p>
+    </header>
 
-        <input type="text" id="zipcode" placeholder="Enter pincode (Range: 90001-96162)" />
-        <select id="dietary-filter">
-            <option value="">All Dietary Options</option>
-            <option value="veg">Vegetarian</option>
-            <option value="non-veg">Non-Vegetarian</option>
-            <option value="gluten-free">Gluten-Free</option>
-        </select>
-        <button onclick="fetchRestaurants()">Search</button>
+    <main class="container">
+        <section class="search-section">
+            <div class="search-container">
+                <div class="search-block">
+                    <label for="zipcode">Enter Pincode</label>
+                    <input type="text" id="zipcode" placeholder="Range: 90001-96162">
+                </div>
+                <div class="search-block">
+                    <label for="dietary-filter">Dietary Options</label>
+                    <select id="dietary-filter">
+                        <option value="">All Dietary Options</option>
+                        <option value="vegan">Non-Vegetarian</option>
+                        <option value="vegetarian">Vegetarian</option>
+                        <option value="gluten-free">Gluten-Free</option>
+                    </select>
+                </div>
+                <button class="search-button" onclick="fetchRestaurants()">Search</button>
+            </div>
+        </section>
 
-        <div id="restaurant-list"></div>
-    </div>
+        <section class="restaurant-list">
+            <h2>Top 10 Most Rated Restaurants</h2>
+            <div class="restaurant-list-container" id="restaurant-list">
+                <!-- Restaurant items injected here dynamically -->
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>© ZipBites - Bringing local flavors to you</p>
+    </footer>
+
     <script src="script.js"></script>
 </body>
 </html>

@@ -1,141 +1,289 @@
+/* CSS Variables for Consistency */
+:root {
+    --primary-color: #ff6347;
+    --secondary-color: #ffebd2;
+    --background-color: #fffaf0;
+    --text-color: #333;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --highlight-color: #e55337;
+    --max-width: 1200px;
+    --padding-main: 20px;
+    --transition-duration: 0.3s;
+}
+
 /* General Body Styling */
 body {
     font-family: Arial, sans-serif;
-    background-color: #fdf3e3; /* Light food-inspired beige background */
-    color: #333;
+    background-color: var(--background-color);
+    color: var(--text-color);
     margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 20px;
-    box-sizing: border-box;
-}
-
-/* Main Container Styling */
-.container {
-    max-width: 600px;
-    width: 100%;
-    padding: 30px 40px; /* Adjusted padding for a more balanced look */
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    margin-bottom: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-height: 100vh;
+    padding: var(--padding-main);
+    box-sizing: border-box;
+    line-height: 1.6;
 }
 
-/* Headings Styling */
-h1, h2 {
-    color: #333;
+/* Header Styling */
+.header {
+    text-align: center;
+    padding: 25px;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 12px var(--shadow-color);
+    width: 100%;
+    max-width: var(--max-width);
+    margin-bottom: 25px;
+    border-radius: 10px;
+}
+
+.header h1 {
+    font-size: 2.5em;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.header .tagline {
+    font-size: 1.2em;
+    color: #555;
+    margin-top: 5px;
+}
+
+/* Compact Search Container */
+.search-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--secondary-color);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 5px 15px var(--shadow-color);
+    margin-bottom: 25px;
+    width: 100%;
+    max-width: 600px; /* Reduced max width */
+    text-align: center;
+    gap: 10px;
+}
+
+/* Individual Block Styling for Search Inputs */
+.search-container .search-block {
+    width: 100%;
+    max-width: 300px; /* Adjusted max width for elements inside the search container */
+}
+
+/* Pincode and Dietary Options Styles */
+.search-container input[type="text"],
+.search-container select {
+    width: 100%;
+    padding: 10px 15px;
+    border: 2px solid var(--primary-color);
+    border-radius: 6px;
+    font-size: 1em;
+    background-color: #fffae8;
+    color: var(--text-color);
+    text-align: center;
+    cursor: pointer;
+    transition: border-color var(--transition-duration) ease;
+    margin: 0 auto;
+}
+
+.search-container input[type="text"]:hover,
+.search-container select:hover {
+    border-color: var(--highlight-color);
+}
+
+/* Search Button Styling */
+.search-container button {
+    padding: 10px 15px;
+    border: none;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 6px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color var(--transition-duration) ease;
+    width: 100%;
+    max-width: 300px; /* Adjusted max width for button */
+}
+
+.search-container button:hover {
+    background-color: var(--highlight-color);
+}
+
+/* Expanded Restaurant List Styling */
+.restaurant-list {
+    width: 100%; /* Full width to occupy more screen space */
+    max-width: 1200px;
+    margin-bottom: 30px;
+    max-height: 500px; /* Increased max height for visibility */
+    overflow-y: auto;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0px 5px 15px var(--shadow-color);
+}
+
+/* Scrollbar Styling for Restaurant List */
+.restaurant-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+.restaurant-list::-webkit-scrollbar-track {
+    background: var(--secondary-color);
+    border-radius: 10px;
+}
+
+.restaurant-list::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+    border-radius: 10px;
+}
+
+/* Restaurant Card */
+.restaurant-item {
+    background-color: #ffffff;
+    padding: 20px;
     margin: 10px 0;
-    font-weight: 600;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px var(--shadow-color);
+    text-align: left;
+    transition: box-shadow var(--transition-duration) ease;
 }
 
-h1 {
-    font-size: 2em;
+.restaurant-item:hover {
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-h2 {
-    font-size: 1.8em;
+/* Restaurant Name Styling */
+.restaurant-name {
+    font-size: 1.6em;
+    font-weight: bold;
+    color: var(--text-color);
+    margin-bottom: 8px;
 }
 
-/* Input Fields and Select Styling */
-input[type="text"], input[type="number"], textarea, select {
+.restaurant-name a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.restaurant-name a:hover {
+    color: var(--primary-color);
+}
+
+/* Details Styling */
+.restaurant-details p {
+    margin: 5px 0;
+    color: #555;
+    font-size: 1.1em;
+}
+
+/* "Submit a Review" Button Styling */
+.review-link {
+    display: block;
+    width: fit-content;
+    margin: 10px 0;
+    padding: 10px 15px;
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color var(--transition-duration) ease;
+}
+
+.review-link:hover {
+    background-color: var(--highlight-color);
+}
+
+/* Footer Styling */
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    max-width: var(--max-width);
+    margin-top: auto;
+    border-radius: 10px;
+    font-size: 0.9em;
+}
+
+.footer p {
+    margin: 0;
+}
+
+/* Review Form */
+.review-form-container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px var(--shadow-color);
+    width: 100%;
+    max-width: 600px;
+    margin: 25px auto;
+    text-align: center;
+}
+
+.review-form label {
+    font-weight: bold;
+    color: var(--text-color);
+    display: block;
+    margin-top: 15px;
+}
+
+.review-form input[type="text"],
+.review-form textarea,
+.review-form select {
     width: 100%;
     padding: 12px;
-    margin: 8px 0;
+    margin-top: 8px;
     border: 1px solid #ddd;
-    border-radius: 4px;
+    border-radius: 6px;
     font-size: 1em;
-    color: #333;
-    box-sizing: border-box;
-    background-color: #fdf5e3; /* Subtle beige for readability */
+    background-color: #fffcf5;
 }
 
-textarea {
-    resize: vertical;
-    height: 100px;
-}
-
-/* Label Styling */
-label {
-    font-weight: bold;
-    margin-top: 10px;
-    display: block;
-    color: #333;
-}
-
-/* Button Styling */
-button {
-    padding: 12px 24px;
+.review-form button {
+    padding: 12px 20px;
+    margin-top: 20px;
     border: none;
-    background-color: #5a67d8;
+    background-color: var(--primary-color);
     color: white;
-    border-radius: 4px;
+    border-radius: 6px;
     font-size: 1em;
     cursor: pointer;
-    transition: background-color 0.2s ease-in-out;
-    text-align: center;
-    margin-top: 10px; /* Space between buttons */
+    transition: background-color var(--transition-duration) ease;
 }
 
-/* Search Button Specific Styling */
-button.search-button {
-    margin-bottom: 20px; /* Adds space between the search button and results */
+.review-form button:hover {
+    background-color: var(--highlight-color);
 }
 
-button:hover {
-    background-color: #4c51bf;
-}
-
-/* Go Back Button Styling */
-.go-back {
-    padding: 10px 24px;
-    background-color: #e07a5f; /* Food-inspired color */
-    color: white;
-    border: none;
-    border-radius: 4px;
-    font-size: 1em;
-    cursor: pointer;
-    transition: background-color 0.2s ease-in-out;
-    margin-top: 10px; /* Space between buttons */
-}
-
-.go-back:hover {
-    background-color: #d15746;
-}
-
-/* Restaurant Item Styling */
-.restaurant-item {
-    border: 1px solid #ddd;
-    padding: 20px;
-    border-radius: 8px;
-    margin-bottom: 15px;
-    text-align: left;
-    background-color: #fff;
-    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.05);
-    margin-top: 20px; /* Ensure space between search button and item cards */
-}
-
-/* Responsive Layout */
+/* Enhanced Mobile Styling */
 @media (max-width: 768px) {
-    .container {
-        padding: 20px 15px;
+    .header h1 {
+        font-size: 1.8em;
     }
 
-    h1 {
-        font-size: 1.5em;
+    .header .tagline {
+        font-size: 1em;
     }
 
-    h2 {
-        font-size: 1.3em;
+    .search-container {
+        max-width: 100%;
+        padding: 10px;
     }
 
-    .go-back, button {
-        padding: 10px 20px;
-        font-size: 0.9em;
+    .restaurant-list {
+        max-width: 100%;
+        max-height: 300px;
+    }
+
+    .review-form-container {
+        width: 90%;
     }
 }
